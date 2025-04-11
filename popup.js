@@ -7,5 +7,7 @@
 let copyCurrentTab = document.getElementById('copyCurrentTab');
 
 copyCurrentTab.onclick = function (element) {
-    chrome.extension.getBackgroundPage().copyCurrentTabFunc();
+    chrome.runtime.getBackgroundPage(function(backgroundPage) {
+        backgroundPage.copyCurrentTabFunc();
+    });
 };

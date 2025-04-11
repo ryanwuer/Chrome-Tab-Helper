@@ -1,17 +1,16 @@
 {
   "name": "Tab Helper",
-  "version": "1.2",
+  "version": "1.4",
   "description": "helper for the tab operation",
   "permissions": ["activeTab", "contextMenus"],
   "background": {
-    "scripts": ["background.js"],
-    "persistent": false
+    "service_worker": "background.js"
   },
   "icons": {
     "128": "images/icon.001.png"
   },
-  "browser_action": {
+  "action": {
     "default_title": "helper for the tab operation"
   },
-  "manifest_version": 2
+  "manifest_version": 3
 }
