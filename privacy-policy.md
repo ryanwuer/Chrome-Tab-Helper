@@ -1,4 +1,5 @@
 # Privacy Policy
+
 Tab Helper is committed to protecting your privacy.
 
 This extension:
@@ -8,4 +9,5 @@ This extension:
 	•	Operates entirely within your local browser environment.
 
 ## Contact
+
 If you have any questions about this privacy policy, please contact us by email or provide advice in the comment section.
