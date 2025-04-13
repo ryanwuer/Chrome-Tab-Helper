@@ -4,29 +4,15 @@
 
 'use strict';
 
-// In MV3, we need to define this function at the top level for popup.js to access
-function copyCurrentTab() {
-  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    if (tabs.length > 0) {
-      chrome.tabs.duplicate(tabs[0].id);
-    }
-  });
-}
-
-// Make the function available to other contexts
-globalThis.copyCurrentTabFunc = copyCurrentTab;
-
 chrome.runtime.onInstalled.addListener(function () {
-
     chrome.contextMenus.create({title: "复制当前Tab", id: "0"});
+});
 
-    chrome.contextMenus.onClicked.addListener(function callback(info, tab) {
-        chrome.tabs.duplicate(tab.id);
-    });
+// 这两个监听器应该在全局作用域中注册
+chrome.contextMenus.onClicked.addListener(function callback(info, tab) {
+  chrome.tabs.duplicate(tab.id);
+});
 
-    // In MV3, we use chrome.action instead of chrome.browserAction
-    chrome.action.onClicked.addListener(function(tab) {
-        chrome.tabs.duplicate(tab.id);
-    });
-
+chrome.action.onClicked.addListener(function(tab) {
+  chrome.tabs.duplicate(tab.id);
 });

@@ -10,7 +10,7 @@
     "128": "images/icon.001.png"
   },
   "action": {
-    "default_title": "helper for the tab operation"
+    "default_title": "复制当前Tab"
   },
   "manifest_version": 3
 }
